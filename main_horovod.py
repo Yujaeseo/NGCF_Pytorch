@@ -53,14 +53,6 @@ if __name__ == '__main__':
     optimizer = hvd.DistributedOptimizer(optimizer, named_parameters=model.named_parameters(),compression = compression)
     
     start_epoch = 0
-
-    if args.resume != 0:
-        checkpoint_info = torch.load(f'./Checkpoint_mod/{args.checkpoint_prefix}_epoch {args.resume}.pth')
-        model.load_state_dict(checkpoint_info['model_state_dict'])
-        optimizer = optim.Adam(model.parameters(), lr=args.lr)
-        optimizer.load_state_dict(checkpoint_info['optimizer_state_dict'])
-        start_epoch = checkpoint_info['epoch'] + 1
-    
     total_time = 0
     model.train()
     for epoch in range(start_epoch, args.epoch):

@@ -40,15 +40,8 @@ if __name__ == '__main__':
     norm_adj = data.get_adj_mat()
     model = NGCF(data.n_users, data.n_items, norm_adj, args).to('cuda')
     optimizer = optim.Adam(model.parameters(), lr=args.lr)
-    start_epoch = 0
-
-    if args.resume != 0:
-        checkpoint_info = torch.load(f'./Checkpoint_mod/{args.checkpoint_prefix}_epoch {args.resume}.pth')
-        model.load_state_dict(checkpoint_info['model_state_dict'])
-        optimizer = optim.Adam(model.parameters(), lr=args.lr)
-        optimizer.load_state_dict(checkpoint_info['optimizer_state_dict'])
-        start_epoch = checkpoint_info['epoch'] + 1
     
+    start_epoch = 0
     total_time = 0
 
     for epoch in range(start_epoch, args.epoch):

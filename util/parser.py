@@ -20,6 +20,5 @@ def parse_args():
     parser.add_argument('-epoch', type=int, default=500, help='Epoch')
     parser.add_argument('-ks', nargs='?', default='[20]', help='Output sizes of every layer')
     parser.add_argument('-checkpoint_prefix', nargs='?', default='NGCF_checkpoint', help='Input check point path')
-    parser.add_argument('-resume', type=int, default=0, help='Input resume epoch')
 
     return parser.parse_args()
