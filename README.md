@@ -42,7 +42,7 @@ I ran this code on ubuntu 20.04 using python with CUDA 11.7.
 
 ## 4. Result
 
-To train and evaluate NGCF_Pytorch implementation, I used the Gowalla dataset from [here](https://github.com/xiangwang1223/neural_graph_collaborative_filtering) with four NVIDIA A100 40GB GPUs which connected by NVLink.
+To train and evaluate NGCF_Pytorch implementation, I used the Gowalla dataset from [here](https://github.com/xiangwang1223/neural_graph_collaborative_filtering) with four NVIDIA A100 SXM4 40GB GPUs which connected by NVLink.
 
 |      | Sec per epoch (1 GPU) | Sec per epoch (4 GPU) | Recall@20 | NGCF@20 |
 | :--- | --------------------- | --------------------- | --------- | ------- |
